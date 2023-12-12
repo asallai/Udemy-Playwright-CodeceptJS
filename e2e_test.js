@@ -1,7 +1,15 @@
 Feature("Zero Bank Application - E2E test")
 
-Scenario("Login Test - Negative", ({ I }) => {
+Before(({ I }) => {
+    console.log("BEFORE HOOK")
     I.amOnPage("http://zero.webappsecurity.com/index.html")
+})
+
+After(({ I }) => {
+    console.log("AFTER HOOK")
+})
+
+Scenario("Login Test - Negative", ({ I }) => {
     I.click("#signin_button")
     I.seeElement("#login_form")
 
